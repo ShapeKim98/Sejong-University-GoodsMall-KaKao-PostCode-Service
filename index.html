@@ -36,22 +36,10 @@
       function postMessageToiOS(postData) {
         window.webkit.messageHandlers.callBackHandler.postMessage(postData);
       }
-        
-//       var themeObj = {
-//         bgColor: "#F0F0F0", //바탕 배경색
-//         searchBgColor: "#A31F36", //검색창 배경색
-//         //contentBgColor: "", //본문 배경색(검색결과,결과없음,첫화면,검색서제스트)
-//         //pageBgColor: "", //페이지 배경색
-//         textColor: "#444444", //기본 글자색
-//         queryTextColor: "#FFFFFF", //검색창 글자색
-//         //postcodeTextColor: "", //우편번호 글자색
-//         emphTextColor: "#D6983B" //강조 글자색
-//         //outlineColor: "", //테두리
-//       };
 
       var element_layer = document.getElementById("layer");
       function execDaumPostcode() {
-//           theme: themeObj
+        new daum.Postcode({
           oncomplete: function (data) {
             var jibunAddress = "";
 
@@ -62,6 +50,7 @@
             }
 
             var postData = {
+              address: data.address,
               roadAddress: data.roadAddress,
               jibunAddress: jibunAddress,
               zonecode: data.zonecode,
@@ -77,12 +66,20 @@
 
       function initLayerPosition() {
         var width = window.innerWidth || document.documentElement.clientWidth;
-        var height = window.innerHeight || document.documentElement.clientHeight;
-          
+        var height =
+          window.innerHeight || document.documentElement.clientHeight;
         element_layer.style.width = width + "px";
         element_layer.style.height = height + "px";
-        element_layer.style.left = ((window.innerWidth || document.documentElement.clientWidth) - width) / 2 + "px";
-        element_layer.style.top = ((window.innerHeight || document.documentElement.clientHeight) - height) / 2 + "px";
+        element_layer.style.left =
+          ((window.innerWidth || document.documentElement.clientWidth) -
+            width) /
+            2 +
+          "px";
+        element_layer.style.top =
+          ((window.innerHeight || document.documentElement.clientHeight) -
+            height) /
+            2 +
+          "px";
       }
     </script>
   </body>
