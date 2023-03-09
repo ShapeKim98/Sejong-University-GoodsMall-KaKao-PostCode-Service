@@ -3,7 +3,7 @@
 <title>
 주소 찾기
 </title>
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 </head>
 <body onload="sample3_execDaumPostcode()">
@@ -20,7 +20,7 @@
     
     window.addEventListener("message", onReceivedPostMessage, false);
     
-    var element_wrap = document.getElementById('wrap');
+    var element_wrap = document.getElementById("wrap");
     
     setUpEvent(input_ele, "click", function (e) {
 
@@ -44,16 +44,16 @@
             theme: themeObj,
             oncomplete: function(data) {
                 var postData = {
-                    address : data.jibunAddress == "" ? data.roadAddress : data.jibunAddress,
-                    zonecode : data.zonecode
+                    address: data.jibunAddress == "" ? data.roadAddress : data.jibunAddress,
+                    zonecode: data.zonecode
                 };
                 
                 window.webkit.messageHandlers.callBackHandler.postMessage(postData);
             }, 
-            width : '100%',
-            height : '100%'
+            width: "100%",
+            height: "100%",
         }).embed(element_wrap);
-        element_wrap.style.display = 'block';
+        element_wrap.style.display = "block";
         
         var width = window.innerWidth || document.documentElement.clientWidth;
         var height = window.innerHeight || document.documentElement.clientHeight;
