@@ -8,7 +8,7 @@
 </head>
 <body onload="sample3_execDaumPostcode()">
 
-<div id = "wrap" style = "display:block;">
+<div id = "wrap" style = "display:block; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch;">
 </div>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -44,7 +44,7 @@
             theme: themeObj,
             oncomplete: function(data) {
                 var postData = {
-                    address : data.address,
+                    address : data.jibunAddress == "" ? data.roadAddress : data.jibunAddress,
                     zonecode : data.zonecode
                 };
                 
