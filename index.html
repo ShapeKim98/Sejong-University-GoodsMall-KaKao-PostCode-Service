@@ -18,10 +18,19 @@
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-    // 우편번호 찾기 찾기 화면을 넣을 element
+    function setUpEvent(elem, eventType, handler) {
+        return (elem.attachEvent ? elem.attachEvent("on" + eventType, handler)
+            : ((elem.addEventListener) ? elem.addEventListener(eventType, handler, false) : null));
+    }
+    
     window.addEventListener("message", onReceivedPostMessage, false);
     
     var element_wrap = document.getElementById('wrap');
+    
+    setUpEvent(input_ele, "click", function (e) {//change here
+
+            //showKeyboard();//my personal function to show keyboard
+    });
     
     function sample3_execDaumPostcode() {
         // 현재 scroll 위치를 저장해놓는다.
