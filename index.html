@@ -14,19 +14,13 @@
 <body onload="sample3_execDaumPostcode()">
 
 <div id = "wrap" style = "display:block;">
-<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1">
 </div>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     // 우편번호 찾기 찾기 화면을 넣을 element
     var element_wrap = document.getElementById('wrap');
-
-    function foldDaumPostcode() {
-        // iframe을 넣은 element를 안보이게 한다.
-        element_wrap.style.display = 'block';
-    }
-
+    
     function sample3_execDaumPostcode() {
         // 현재 scroll 위치를 저장해놓는다.
         var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
