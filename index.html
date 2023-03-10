@@ -8,7 +8,7 @@
 </head>
 <body onload="sample2_execDaumPostcode()">
 
-<div id = "layer" style = "display:block; margin: 0px; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch;">
+<div id = "layer" style = "display:block; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch;">
 </div>
 
 <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
@@ -19,6 +19,21 @@
 //     }
     
     window.addEventListener("message", onReceivedPostMessage, false);
+    
+    function onReceivedPostMessage(event) {
+        //..ex deconstruct event into action & params
+        var action = event.data.action;
+        var params = event.data.params;
+        console.log("onReceivedPostMessage " + event);
+      }
+
+      function onReceivedActivityMessageViaJavascriptInterface(json) {
+        //..ex deconstruct data into action & params
+        var data = JSON.parse(json);
+        var action = data.action;
+        var params = data.params;
+        console.log("onReceivedActivityMessageViaJavascriptInterface " + event);
+      }
     
 //     window.onload = function() {
         var element_layer = document.getElementById("layer");
