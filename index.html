@@ -13,20 +13,20 @@
 
 <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
 <script>
-    function setUpEvent(elem, eventType, handler) {
-        return (elem.attachEvent ? elem.attachEvent("on" + eventType, handler)
-            : ((elem.addEventListener) ? elem.addEventListener(eventType, handler, false) : null));
-    }
+//     function setUpEvent(elem, eventType, handler) {
+//         return (elem.attachEvent ? elem.attachEvent("on" + eventType, handler)
+//             : ((elem.addEventListener) ? elem.addEventListener(eventType, handler, false) : null));
+//     }
     
     window.addEventListener("message", onReceivedPostMessage, false);
     
-    window.onload = function() {
-        var element_wrap = document.getElementById("wrap");
+//     window.onload = function() {
+//         var element_wrap = document.getElementById("wrap");
 
-        setUpEvent(input_ele, "click", function (e) {
+//         setUpEvent(input_ele, "click", function (e) {
 
-        });
-    }
+//         });
+//     }
     
     function sample3_execDaumPostcode() {
         var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
