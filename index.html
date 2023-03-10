@@ -20,11 +20,13 @@
     
     window.addEventListener("message", onReceivedPostMessage, false);
     
-    var element_wrap = document.getElementById("wrap");
-    
-    setUpEvent(input_ele, "click", function (e) {
+    window.onload = function() {
+        var element_wrap = document.getElementById("wrap");
 
-    });
+        setUpEvent(input_ele, "click", function (e) {
+
+        });
+    }
     
     function sample3_execDaumPostcode() {
         var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
